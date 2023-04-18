@@ -1,0 +1,116 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import i1 from "../../images/soluciones/aei/1.jpg";
+import i2 from "../../images/soluciones/aei/2.jpg";
+import i3 from "../../images/soluciones/aei/3.jpg";
+---
+
+<Layout title="Soluciones | Arquitectura E Infraestructura ">
+	<main>
+		<div
+			class="section cover is-flex is-flex-direction-column is-justify-content-center"
+		>
+			<h1 class="title-text blue">Arquitectura E Infraestructura</h1>
+		</div>
+		<section>
+			<div class="section">
+				<p class="has-text-centered">
+					Servicios profesionales de Arquitectura e Infraestructura Proyectos
+					y Obras Arquitectónicas Inteligentes , residenciales, industriales
+				</p>
+			</div>
+		</section>
+		<section>
+			<div class="container">
+				<div class="columns">
+					<div
+						class="column is-flex is-flex-direction-column is-justify-content-center"
+					>
+						<h2 class="title-text blue">Diseño Interior – Exterior</h2>
+						<p>Acabados en la construcción, Mobiliario, Paisajismo.</p>
+					</div>
+					<div class="column">
+						<div class="img-hover-zoom">
+							<img src={i1} alt="aei 2" />
+						</div>
+					</div>
+				</div>
+				<hr />
+			</div>
+		</section>
+		
+
+		<section>
+			<div class="container">
+				<div class="columns">
+					<div class="column">
+						<div class="img-hover-zoom">
+							<img src={i2} alt="aei 3" />
+						</div>
+					</div>
+					<div
+						class="column is-flex is-flex-direction-column is-justify-content-center"
+					>
+						<h2 class="title-text blue">Avalúos - Asesoría – Consultoría</h2>
+						<p>Estimación del valor comercial de un inmueble reflejado en cifras comerciales, complementando con respuestas profesionales a diferentes inquietudes por medio de asesorías, además de servicios enfocados en la calidad y necesidad de nuestros clientes</p>
+					</div>
+				</div>
+				<hr />
+			</div>
+		</section>
+
+		<section>
+			<div class="container">
+				<div class="columns">
+					<div
+						class="column is-flex is-flex-direction-column is-justify-content-center"
+					>
+						<h2 class="title-text blue">Construcciones en General</h2>
+						<p>Coordinación, Dirección, Supervisión, Fiscalización de Obras y Proyectos, para llegar a buen término sus proyectos en calidad, tiempo y rentabilidad.</p>
+					</div>
+					<div class="column">
+						<div class="img-hover-zoom">
+							<img src={i3} alt="aei 3" />
+						</div>
+					</div>
+				</div>
+				<hr />
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	h1 {
+		font-size: 4rem;
+	}
+	.cover {
+		background-image: url("../../images/soluciones/aei/cover.jpg");
+		max-height: 400px;
+		min-height: 350px;
+		object-fit: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	section:nth-child(odd) {
+		background-color: #f2f2f2;
+	}
+	.img-hover-zoom {
+		overflow: hidden;
+	}
+	img {
+		transition: transform 0.2s;
+		margin: 0 auto;
+		max-height: 450px;
+	}
+	img:hover {
+		transform: scale(1.2);
+	}
+	.img-hover-zoom img{
+		max-height: 300px;
+		min-height: 200px;
+		margin: auto;
+		display: block;
+	}
+</style>

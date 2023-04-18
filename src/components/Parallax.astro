@@ -1,0 +1,34 @@
+---
+export interface Props {
+    imagen: string;
+}
+const { imagen } = Astro.props;
+---
+
+<section id={imagen} class="hero is-large">
+    <div class="container is-flex is-flex-direction-column is-justify-content-center">
+        <slot />
+    </div>
+</section>
+
+<style is:global>
+    .title_paralax {
+        color: white;
+        font-weight: 800;
+        text-align: center;
+        font-size: 2rem;
+        text-shadow: 1px 1px 1px #000, 3px 3px 5px rgb(0, 0, 3);
+    }
+
+    #forest {
+        background: url("/src/images/forest.jpg");
+        max-height: 450px;
+        min-height: 450px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+
+</style>

@@ -1,0 +1,167 @@
+---
+import Layout from "../layouts/Layout.astro";
+import logo from "../images/logo.jpeg";
+import kid from "../images/kid.jpeg";
+---
+
+<Layout title="Nosotros">
+	<main>
+		<div class="section">
+			<div class="container">
+				<div class="columns">
+					<div class="column has-text-centered">
+						<img
+							src={logo}
+							alt="Cepel logo"
+							style="max-height: 200px;"
+						/>
+					</div>
+					<div class="column">
+						<h1 class="title-text blue">¿Quiénes somos?.</h1>
+						<p>
+							CEPEL es una empresa que apoya a la descarbonización
+							en las industrias para apoyar a los ODS de las NN
+							UU.
+						</p>
+						<p>
+							Está conformada por Expertos Internacionales en
+							diversas áreas que apoyan al desarrollo sostenible
+							en las Industrias, liderada por el Experto
+							Internacional Ing. Eddison Arcos Acosta. Tiene
+							socios estratégicos para dar soluciones integrales a
+							las industrias de los diversos sectores.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section fadding-green">
+			<div class="container">
+				<div class="columns is-vcentered">
+					<div class="column">
+						<h1 class="title-text blue">¿Por qué CEPEL?</h1>
+						<p>
+							Porque apoyamos a las industrias para eficientizar
+							sus recursos disponibles (personal, máquinas,
+							procesos y sistemas) con el fin de conseguir
+							beneficios económicos que apoyen el desarrollo de
+							proyectos para automatización o innovación, con
+							miras a la renovación de activos con características
+							de alta eficiencia energética y asegurar la mejora
+							continua de las organizaciones.
+						</p>
+						<p>
+							Nos enfocamos en la ejecución de proyectos de
+							Eficiencia Energética, implementación de la Norma
+							ISO 50001, proyectos de Descarbonización, formación
+							de personal, asesoría para implementación de
+							Energías Renovables, Economía Circular, y apoyamos
+							al desarrollo de la infraestructura civil con un
+							área especializada en fiscalización, diseño y
+							construcción.
+						</p>
+					</div>
+					<div class="column">
+						<figure class="image is-16by9">
+							<iframe
+								class="has-ratio"
+								style="max-height: 350px;"
+								src="https://www.youtube.com/embed/S16L6nwI0iQ?start=5503"
+								title="Foro Eficiencia"
+								allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen=""></iframe>
+						</figure>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<div class="container">
+				<h1 class="title-text blue">Código de Ética y Conducta</h1>
+				<p>
+					Nuestro código de ética y conducta se basan en valores y
+					principios.
+				</p>
+				<div class="columns">
+					<div class="column">
+						<h2>Valores</h2>
+						<ul>
+							<li>
+								<strong>Respeto</strong><p>
+									Tratamos a todos nuestros clientes y su
+									personal con dignidad, consideración,
+									cortesía, cordialidad, y tolerancia.
+								</p>
+							</li><li>
+								<strong>Honestidad</strong><p>
+									Nuestro comportamiento está dirigido a un
+									accionar con rectitud, probidad y de manera
+									justa.
+								</p>
+							</li><li>
+								<strong>Responsabilidad</strong><p>
+									Respondemos a nuestras obligaciones y
+									compromisos adquiridos, asumiendo las
+									consecuencias de los actos que resulten de
+									las decisiones tomadas.
+								</p>
+							</li><li>
+								<strong>Solidaridad</strong><p>
+									Ofrecemos apoyo y colaboración a favor de un
+									fin común con las empresas que hemos asumido
+									como socios estratégicos para nuestro
+									desarrollo profesional y los clientes.
+								</p>
+							</li><li>
+								<strong>Lealtad</strong><p>
+									Nos apegamos a la misión y visión de CEPEL y
+									clientes , para fortalecer y asegurar
+									nuestros compromisos asumidos en los
+									valores.
+								</p>
+							</li>
+						</ul>
+					</div>
+					<div class="column">
+						<h2>Principios</h2>
+						<div class="container">
+							<ul>
+								<li>
+									<strong>Legalidad</strong><p>
+										Cumplimos y exigimos el cumplimiento de
+										los requisitos legales de cada país en
+										donde radican nuestros clientes.
+									</p>
+								</li><li>
+									<strong>Igualdad</strong><p>
+										Nos comprometemos a un trato igualitario
+										para todas las personas y clientes.
+									</p>
+								</li>
+							</ul>
+							<img
+								src={kid}
+								alt="cepel kid"
+								style="max-width: 350px; display: block; margin: auto;"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.fadding-green {
+		color: #150f59;
+		background: linear-gradient(
+			180deg,
+			rgba(193, 241, 181, 0.6) 0%,
+			rgba(193, 241, 181, 0.2) 25%,
+			rgba(193, 241, 181, 0.4) 50%,
+			rgba(193, 241, 181, 0.2) 75%,
+			rgba(193, 241, 181, 0.6) 100%
+		);
+	}
+</style>

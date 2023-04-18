@@ -1,0 +1,31 @@
+---
+export interface Props {
+    icon: string;
+    title: string;
+}
+
+const { icon, title } = Astro.props;
+---
+
+<div class='is-flex is-align-items-center '>
+    <span class="icon">
+        <span class="material-symbols-outlined">{icon}</span>
+    </span>
+    <p set:html={title} />
+</div>
+
+<style>
+    div {
+        gap: 1em;
+        padding-left: 1em;
+    }
+    hr {
+        color: blue;
+        height: 22%;
+    }
+    p,
+    span {
+        margin: 0% !important;
+        display: inline-block;
+    }
+</style>

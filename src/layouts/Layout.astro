@@ -1,35 +1,122 @@
 ---
+import "bulma/css/bulma.min.css";
+import Navbar from "../components/Navbar.astro";
+import Parallax from "../components/Parallax.astro";
+
+import favicon from "../images/favicon.ico";
+import Footer from "../components/Footer.astro";
+
 export interface Props {
 	title: string;
+	show_call_to_action?: boolean;
 }
 
-const { title } = Astro.props;
+const { title, show_call_to_action=true } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="has-navbar-fixed-top">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href={favicon} />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,1,0"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Open+Sans&display=swap"
+			rel="stylesheet"
+		/>
 		<title>{title}</title>
 	</head>
 	<body>
+		<Navbar />
 		<slot />
+		{show_call_to_action && <Parallax imagen="forest">
+			<h1 class="title_paralax">!Vamos anímate!<br>Te estamos esperando.</h1>
+            <a class="button green-background is-text-center blue-background-hoover" href='/contacto' >Contáctanos</a>
+		</Parallax>}
+		<Footer />
 	</body>
 </html>
 <style is:global>
 	:root {
 		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			#da62c4 30%,
+			white 60%
+		);
+	}
+	.white{
+		color:#fff
+	}
+	.blue {
+		color: #150f59;
+	}
+	.blue-background {
+		background-color: #150f59;
+		color: #fff;
+	}
+	.blue-background-hoover:hover {
+		background-color: #d5eca0;
+		color: #150f59;
+	}
+	.green-background {
+		background-color: #d5eca0;
+		color: #150f59;
+	}
+	.green-background:hover {
+		background-color: #150f59;
+		color: #d5eca0;
+	}
+	.title-text {
+		font-family: EB Garamond !important;
+		font-feature-settings: "smcp";
+		font-variant: small-caps;
 	}
 	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
+		color: black;
+		font-family: Roboto, Helvetica Neue, sans-serif;
 	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: black;
+		margin-bottom: 0.5rem;
+		font-weight: 500;
+		line-height: 1.2;
+		font-family: Roboto, Helvetica Neue, sans-serif !important;
 	}
+	h1 {
+		font-size: 2.5rem;
+	}
+	h2 {
+		font-size: 1.75rem;
+	}
+	p {
+		text-align: justify;
+		margin-bottom: 1em;
+	}
+	strong{
+		font-family: Roboto, Helvetica Neue, sans-serif;
+	}
+	li{
+		display: list-item;
+		list-style-image: url("../images/logo-bullet.png");
+	}
+	ul{
+		list-style-position: inside;
+		padding-left: 32px;
+	}
+
 </style>
+

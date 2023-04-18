@@ -1,0 +1,97 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import i1 from "../../images/soluciones/formacion/1.png";
+import i2 from "../../images/soluciones/formacion/2.png";
+---
+
+<Layout title="Soluciones | Formación">
+	<main>
+		<div class="section cover is-flex is-flex-direction-column is-justify-content-center">
+			<h1 class="title-text blue">Formación</h1>
+		</div>
+		<section>
+			<div class="container">
+				<div class="columns">
+					<div
+						class="column is-flex is-flex-direction-column is-justify-content-center"
+					>
+						<div class="img-hover-zoom">
+							<img src={i1} alt="formacion 1" />
+						</div>
+					</div>
+					<div
+						class="column is-flex is-flex-direction-column is-justify-content-center"
+					>
+						<p>
+							La formación apoya el desarrollo de los países y las
+							industrias, por esa razón nos preocupamos de
+							fortalecer las capacidades locales mediante un
+							aprendizaje que se basa en el modelo Kolb, que es el
+							aprendizaje basado en la experiencia.
+						</p>
+					</div>
+				</div>
+				<hr />
+			</div>
+		</section>
+		<section>
+			<div class="container">
+				<div class="columns">
+					<div
+						class="column is-flex is-flex-direction-column is-justify-content-center"
+					>
+						<h2 class="title-text blue">Ofrecemos:</h2>
+						<ul>
+							<li>Introducción a la Norma ISO 50001</li>
+							<li>Formación de auditores energéticos</li>
+							<li>Desempeño energético</li>
+							<li>
+								Data Analytics en la ejecución de Proyectos
+								Energéticos
+							</li>
+						</ul>
+					</div>
+					<div class="column">
+						<div class="img-hover-zoom">
+							<img src={i2} alt="formacion 2" />
+						</div>
+					</div>
+				</div>
+				<hr />
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	h1{
+		font-size: 4rem;
+	}
+	.cover {
+		background-image: url("../../images/soluciones/formacion/cover.png");
+		max-height: 400px;
+		min-height: 350px;
+		object-fit: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	section:nth-child(odd) {
+		background-color: #f2f2f2;
+	}
+	.img-hover-zoom {
+		overflow: hidden;
+	}
+	img {
+		transition: transform 0.2s;
+		margin: 0 auto;
+		max-height: 450px;
+	}
+	img:hover {
+		transform: scale(1.2);
+	}
+	.img-hover-zoom img {
+		margin: auto;
+		display: block;
+	}
+</style>

@@ -1,0 +1,28 @@
+---
+import Layout from "./Layout.astro";
+const  project = await Astro.glob("../pages/proyectos/fv.mdx");
+
+---
+
+<Layout title="Proyectos">
+	<main>
+		<div class="carousel-item active">
+			<img
+			src={project[0].frontmatter.cover}
+			class="d-block w-100"
+			/>
+			<div class="cover-caption blue-background">				
+				<h1 class="title-text white">
+					{project[0].frontmatter.title}
+				</h1>
+			</div>
+		</div>
+		<slot />
+	</main>
+</Layout>
+
+<style>
+.cover-caption{
+	width: 100;
+}
+</style>

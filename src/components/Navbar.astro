@@ -1,0 +1,114 @@
+---
+import logo from "../images/logo.png";
+---
+
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a href="/">
+            <img src={logo} style="height: 50px!important;" />
+        </a>
+        <h1 class="title-text blue is-align-self-flex-end">Cepel</h1>
+
+        <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navigation"
+        >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navigation" class="navbar-menu">
+        <div class="navbar-end">
+            <a class="navbar-item title-text blue" href="/"> Inicio</a>
+
+            <a class="navbar-item title-text blue" href="/nosotros">
+                Nosotros</a
+            >
+
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link title-text blue"> Soluciones</a>
+
+                <div class="navbar-dropdown">
+                    <a
+                        class="navbar-item title-text blue"
+                        href="/soluciones/eficiencia-energetica">Eficiencia Energética</a
+                    >
+                    <a
+                        class="navbar-item title-text blue"
+                        href="/soluciones/arquitectura-e-infraestructura"
+                    >
+                        Arquitectura E Infraestructura</a
+                    >
+                    <a class="navbar-item title-text blue" href="/soluciones/formacion"
+                        >Formación</a
+                    >
+                </div>
+            </div>
+            <a class="navbar-item title-text blue" href="/proyectos">
+                Proyectos</a
+            >
+            <a class="navbar-item title-text blue" href="/contacto">
+                Contacto</a
+            >
+        </div>
+    </div>
+</nav>
+
+<style>
+    h1 {
+        font-size: 1.75rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+    nav {
+        border-bottom: #a3d921 solid 8px;
+        background-color: #f8f9fa !important;
+        padding: 0.5rem 1rem;
+    }
+    .navbar-brand {
+        height: 60px;
+    }
+    .logo-img {
+        padding: 0%;
+        height: 50px;
+    }
+    a.navbar-item,
+    a.navbar-link {
+        cursor: url("../images/kid.png") 2 2, pointer;
+        font-size: 18px;
+    }
+    a.navbar-link::after {
+        color: #a3d921;
+    }
+    .navbar-dropdown a.navbar-item:hover {
+        color: #a3d921;
+        background-color: #f5f5f5;
+    }
+    a.navbar-item:hover,
+    a.navbar-link:hover {
+        color: #a3d921;
+        background-color: #f5f5f5;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const $navbarBurgers = Array.prototype.slice.call(
+            document.querySelectorAll(".navbar-burger"),
+            0
+        );
+        $navbarBurgers.forEach((el) => {
+            el.addEventListener("click", () => {
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+                el.classList.toggle("is-active");
+                $target.classList.toggle("is-active");
+            });
+        });
+    });
+</script>

@@ -1,0 +1,133 @@
+---
+import Layout from "../layouts/Layout.astro";
+import IconText from "../components/IconText.astro";
+import kid from "../images/kid-med.png";
+---
+
+<Layout title="Contacto" show_call_to_action={false}>
+	<main>
+		<div class="section">
+			<div class="container">
+				<div class="columns">
+					<div id='info'
+						class="column is-flex is-flex-direction-column line-r is-justify-content-center is-flex-wrap-wrap blue"
+					>
+						<IconText icon="apartment" title="Quito - Ecuador" />
+						<hr />
+						<IconText
+							icon="schedule"
+							title="Lunes a Viernes <br> 8:00-18:00"
+						/>
+						<hr />
+						<IconText icon="phone" title="0995654840" />
+						<hr />
+						<IconText icon="email" title="info@cepelee.com" />
+					</div>
+					<div class="column line-l">
+						<h1 class="title-text blue">
+							Envíanos Tus Requerimientos
+						</h1>
+						<form
+							action="https://formspree.io/f/xvonvenb"
+							method="post"
+						>
+							<div class="field">
+								<label class="label">Nombre</label>
+								<div class="control">
+									<input
+										class="input"
+										type="text"
+										placeholder="Nombre Apellido"
+										required
+										name="nombres"
+									/>
+								</div>
+							</div>
+							<div class="field">
+								<label class="label">Email</label>
+								<div class="control">
+									<input
+										class="input"
+										type="email"
+										placeholder="ejemplo@gmail.com"
+										required
+										name="email"
+									/>
+								</div>
+							</div>
+							<div class="field">
+								<label class="label">Teléfono</label>
+								<div class="control">
+									<input
+										class="input"
+										type="tel"
+										placeholder="0999999999"
+										maxlength="10"
+										required
+										name="phone"
+									/>
+								</div>
+							</div>
+
+							<div class="field">
+								<label class="label">Mensaje</label>
+								<div class="control">
+									<textarea
+										class="textarea"
+										required
+										placeholder="Mensaje"
+										name="message"></textarea>
+								</div>
+							</div>
+
+							<div class="field">
+								<div class="control has-text-centered">
+									<button
+										class="button blue-background blue-background-hoover"
+										>Enviar</button
+									>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<img
+					src={kid}
+					alt=""
+					style="max-height: 200px; width: auto; margin: auto; display: block;"
+				/>
+			</div>
+		</div>
+	</main>
+</Layout>
+<style is:global>
+
+	#info p{
+		font-size: 1.5rem;
+	}
+	#info span{
+		font-size: 2rem;
+	}
+	
+</style>
+<style>
+
+	.container {
+		border: 1px solid #000000;
+		box-sizing: border-box;
+		box-shadow: 0 4px 4px #00000040;
+		border-radius: 10px;
+	}
+	.line-r {
+		border-right: groove 1px #d5eca0;
+	}
+	.line-l {
+		border-left: groove 1px #d5eca0;
+	}
+	.columns {
+		padding: 1.5em;
+	}
+	label {
+		color: #150f59 !important;
+	}
+</style>

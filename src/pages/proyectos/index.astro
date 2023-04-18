@@ -1,0 +1,67 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+const projects = await Astro.glob("./*.mdx");
+---
+
+<Layout title="Proyectos">
+	<main>
+		<div
+			class="section cover is-flex is-flex-direction-column is-justify-content-center"
+		>
+			<h1 class="title-text blue has-text-centered">Proyectos</h1>
+		</div>
+		<div class="section">
+			<div class="container">
+				<div class="columns">
+					{
+						projects.map((project) => (
+							<div class="column is-one-quarter">
+								<ProjectCard
+									title={project.frontmatter.title}
+									imagen={project.frontmatter.imagen}
+									url={project.frontmatter.imagen}
+								></ProjectCard>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	h1 {
+		font-size: 4rem;
+	}
+	.cover {
+		background-image: url("../../images/proyectos/cover.jpg");
+		max-height: 400px;
+		min-height: 350px;
+		object-fit: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	section:nth-child(odd) {
+		background-color: #f2f2f2;
+	}
+	.img-hover-zoom {
+		overflow: hidden;
+	}
+	img {
+		transition: transform 0.2s;
+		margin: 0 auto;
+		max-height: 450px;
+	}
+	img:hover {
+		transform: scale(1.2);
+	}
+	.img-hover-zoom img {
+		max-height: 300px;
+		min-height: 200px;
+		margin: auto;
+		display: block;
+	}
+</style>

@@ -1,0 +1,50 @@
+---
+import IconText from "../components/IconText.astro";
+---
+
+<style>
+    h1.title-text {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.15rem !important;
+    }
+    .gapped {
+        gap: 1em;
+    }
+    .end {
+        background-color: #070020;
+        color: #fff;
+        position: relative;
+        bottom: 0px;
+    }
+    p {
+        margin: 0 !important;
+    }
+    footer {
+        padding: 2rem !important;
+    }
+</style>
+<footer class="footer blue-background">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <h1 class="title-text white">CEPEL</h1>
+                <h2 class="white">Un desarrollo sostenible y consciente</h2>
+            </div>
+            <div
+                class="column is-flex is-flex-direction-column is-justify-content-center gapped"
+            >
+                <h1 class="title-text white">Información</h1>
+                <IconText icon="apartment" title="Quito - Ecuador" />
+                <IconText icon="email" title="info@cepelee.com" />
+                <IconText icon="phone" title="0995654840" />
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="end">
+    <p class="has-text-centered">
+        © 2022 Copyright: Cepel, developed by usagiCLI
+    </p>
+</div>
