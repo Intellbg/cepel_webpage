@@ -13,15 +13,17 @@ const projects = await Astro.glob("./*.mdx");
 		</div>
 		<div class="section">
 			<div class="container">
-				<div class="columns">
+				<div class="columns is-flex-wrap-wrap">
 					{
 						projects.map((project) => (
-							<div class="column is-one-quarter">
+							<div
+								class="column is-one-quarter"
+							>
 								<ProjectCard
 									title={project.frontmatter.title}
 									imagen={project.frontmatter.imagen}
-									url={project.frontmatter.imagen}
-								></ProjectCard>
+									url={project.frontmatter.url}
+								/>
 							</div>
 						))
 					}

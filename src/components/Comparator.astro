@@ -1,0 +1,49 @@
+---
+import ImagenHoverText from "./ImagenHoverText.astro";
+export interface Props {
+    img: string;
+    img2: string;
+    title: string;
+}
+const { img, img2, title } = Astro.props;
+---
+
+<div class="section">
+    <div class="container">
+        <h2><strong>{title}</strong></h2>
+        <div class="columns">
+            <div
+                class="column is-flex is-flex-direction-column is-aling-items-center is-justify-content-center"
+            >
+                <h3 class="has-text-centered">
+                    <strong> Situación inicial</strong>
+                </h3>
+                <img src={img} alt="" />
+            </div>
+            <div
+                class="column is-flex is-flex-direction-column is-aling-items-center is-justify-content-center padded"
+            >
+                <h3 class="has-text-centered">
+                    <strong>Situación actual</strong>
+                </h3>
+                <img src={img2} alt="" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    hr {
+        width: 80%;
+        height: 1px;
+        margin: auto;
+    }
+    h2 {
+        font-size: 1.25rem;
+    }
+    img{
+        display: block;
+        align-self: center;
+        width: 50%;
+    }
+</style>

@@ -1,0 +1,50 @@
+---
+imagen: src/images/proyectos/ferrero/logo.png
+title: Ferrero
+url: /proyectos/ferrero
+layout: ../../layouts/ProjectLayout.astro
+---
+import BasicSection from '../../components/BasicSection.astro';
+import MirrorSection from '../../components/MirrorSection.astro';
+import VideoSection from '../../components/VideoSection.astro';
+import Cover from '../../components/Cover.astro'
+import p0 from '../../images/proyectos/ferrero/p0.png';
+import p1 from '../../images/proyectos/ferrero/p1.png';
+import p2 from '../../images/proyectos/ferrero/p2.png';
+import p3 from '../../images/proyectos/ferrero/p3.png';
+import cover from '../../images/proyectos/ferrero/cover.jpg';
+
+<Cover img={cover} title="Ferrero Del Ecuador S.a."/>
+
+<BasicSection img={p0} 
+title='Implementación de la Norma ISO 50001:2018' 
+img_description='Taller de formación de auditores internos de la Norma ISO 50001:2018, por parte del Ing. José Luis Larregola, Experto Internacional en Eficiencia Energética.'>
+Primera empresa ecuatoriana del sector de alimentos en adquirir la norma ISO 50001:2018. El Proyecto incluyó la formación del personal en herramientas específicas de Eficiencia Energética para el Energy Team, desarrollo del diagnóstico energético, implementación de las oportunidades de mejora del desempeño energético, desarrollo de la documentación del SGEn, evaluación de la mejora del desempeño energético con un resultado 8 meses de payback.
+</BasicSection>
+
+<MirrorSection img={p1}
+img_description='Evento de entrega de la Certificación ISO 50001:2018 por parte del Ing. René Ortíz (Ministro de Energías y Recursos No Renovables del Ecuador) al Ing. Nichola Franchini (Plan Manager of Ferrero Ecuador'>
+>
+La certificación fue entregada por el Ing. René Ortíz, Ministro de Energías y Recursos No Renovables del Ecuador.
+
+
+Los resultados muestran ahorros que están alrededor del 10% en la reducción del consumo eléctrico y térmico. Las principales oportunidades de mejora del desempeño energético que se ejecutaron son las siguientes:
+- Optimización de la generación de sala de compresores
+- Optimización del sistema de aire acondicionado
+- Optimización del sistema de vapor
+- Check list de actividades para el stand by y paros de planta.
+</MirrorSection>
+
+<BasicSection img={p2} 
+title='Descarbonización de la Planta en días no laborables' 
+img_description='Esquema de la solución de descarbonización para eliminar el uso de vapor en días no laborables en la planta'>
+Las condiciones de stand by de la planta requiere que ciertos procesos industriales requieran áreas calientes, por lo que es necesario mantenerlas a temperaturas de proceso con uso de vapor. La solución fue sustituir el uso de vapor por equipos eléctricos para mantener las condiciones de stand by en los procesos industriales, los resultados muestran que existe una reducción del 31% del consumo de vapor en el uso energético y un 84% en los fines de semana. Al momento los calderos se apagan los fines de semana.
+</BasicSection>
+
+
+<MirrorSection img={p3} 
+title='App de monitoreo del SGEn en Power BI'
+img_description='Esquema de la solución de descarbonización para eliminar el uso de vapor en días no laborables en la planta.'>
+>
+El monitoreo de todos los medidores de la planta, incluido el medidor principal de la distribuidora están siendo monitoreados en línea en Power BI, con lo cual los Jefes de Planta está monitoreando en línea sus procesos de producción mediante los medidores de energía.'
+</MirrorSection>

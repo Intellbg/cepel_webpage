@@ -1,0 +1,30 @@
+---
+import ImagenHoverText from "./ImagenHoverText.astro";
+export interface Props {
+    img: string;
+    img_description: string;
+    title: string;
+}
+const { img, img_description, title } = Astro.props;
+---
+
+<div class="section">
+    <div class="container">
+        <h1 class="title-text blue">Videos</h1>
+        <div
+            class="is-flex is-flex-direction-column is-aling-items-center is-justify-content-center"
+        >
+            <slot />
+        </div>
+    </div>
+</div>
+
+<hr class="blue-background" />
+
+<style>
+    hr {
+        width: 80%;
+        height: 1px;
+        margin: auto;
+    }
+</style>

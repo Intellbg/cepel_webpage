@@ -1,19 +1,167 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import ParallaxTitle from "../components/ParallaxTitle.astro";
+import BasicSection from "../components/BasicSection.astro";
+import kid from "../images/kid.jpeg";
+import s1 from "../images/s1.png";
+import s2 from "../images/s2.png";
+import s3 from "../images/s3.png";
+import MirrorSection from "../components/MirrorSection.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import NewsSection from "../components/NewsSection.astro";
+
+const p1 = await Astro.glob("./proyectos/ferrero.mdx");
+const p2 = await Astro.glob("./proyectos/fv.mdx");
+const p3 = await Astro.glob("./proyectos/delltex.mdx");
+const p4 = await Astro.glob("./proyectos/emaps.mdx");
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Cepel">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-		</ul>
+		<ParallaxTitle
+			imagen="world"
+			title="CEPEL por un desarrollo sostenible con mayor rentabilidad y cuidado del planeta"
+		/>
+		<div class="section">
+			<div class="container">
+				<div class="columns is-vcentered">
+					<div class="column">
+						<h1 class="title-text blue">CEPEL</h1>
+						<p>
+							La optimización de procesos organizacionales
+							mediante la Gestión de la Energía, Economía
+							Circular, Gestión de Operaciones y Ciencia de los
+							Datos permite mejorar continuamente desempeño
+							energético y ambiental, la productividad y
+							rentabilidad.
+						</p>
+						<p>
+							Buscamos transformar a las organizaciones en
+							industrias sustentables consientes que estamos
+							disponiendo de los recursos que heredamos de las
+							futuras generaciones.
+						</p>
+						<a
+							href="/nosotros"
+							class="button blue-background blue-background-hoover"
+							>¿Quiénes somos?</a
+						>
+					</div>
+					<div class="column has-text-centered">
+						<img src={kid} alt="" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<ParallaxTitle imagen="city" title="Noticias" />
+		<NewsSection></NewsSection>
+		<ParallaxTitle imagen="solutions" title="Soluciones" />
+		<BasicSection
+			title="Eficiencia Energética"
+			img={s1}
+			img_description="Implementación de la Norma ISO 50001, Economía Circular, Programas, Data Science, Auditorías Energéticas, Auditorías Internas"
+		>
+			<p>
+				La Eficiencia Energética en la industria está relacionado a las
+				acciones que permiten optimizar los procesos productivos y
+				energéticos combinados con el fin de disminuir o mantener el
+				consumo de la energía con el fin de mejorar continuamente su
+				productividad buscando empresas sostenibles y con visión de
+				descarbonización para apoyar a los Objetivos de Desarrollo
+				Sostenible de la Organización de las Naciones Unidas. Según la
+				Norma ISO 50001:2018, la Eficiencia Energética es una parte de
+				la Gestión de la Energía y es una relación entre la energía de
+				salida y la energía de entrada, de tal forma, que es una
+				consecuencia de la optimización del uso y del consumo de la
+				energía.
+			</p>
+			<a
+				href="/soluciones/eficiencia-energetica"
+				class="button blue-background blue-background-hoover">Ver más</a
+			>
+		</BasicSection>
+		<MirrorSection
+			title="Arquitectura E Infraestructura"
+			img={s2}
+			img_description="Diseño Interior – Exterior, Avalúos - Asesoría – Consultoría, Construcciones en General, Civil, Descarbonización"
+		>
+			<p>
+				Servicios profesionales de Arquitectura e Infraestructura
+				Proyectos y Obras Arquitectónicas Inteligentes , residenciales,
+				industriales
+			</p>
+			<a
+				href="/soluciones/arquitectura-e-infraestructura"
+				class="button blue-background blue-background-hoover">Ver más</a
+			>
+		</MirrorSection>
+		<BasicSection
+			title="Formación"
+			img={s3}
+			img_description="Introducción a la Norma ISO 50001, Formación de auditores energéticos, Desempeño energético, Data Analytics en la ejecución de Proyectos Energéticos"
+		>
+			<p>
+				La formación apoya el desarrollo de los países y las industrias,
+				por esa razón nos preocupamos de fortalecer las capacidades
+				locales mediante un aprendizaje que se basa en el modelo Kolb,
+				que es el aprendizaje basado en la experiencia.
+			</p>
+			<a
+				href="/soluciones/formacion"
+				class="button blue-background blue-background-hoover">Ver más</a
+			>
+		</BasicSection>
+		<ParallaxTitle imagen="forest" title="Proyectos" />
+		<div class="section">
+			<div class="container">
+				<div class="columns is-flex-wrap-wrap">
+					<div class="column is-one-quarter">
+						<ProjectCard
+							title={p1[0].frontmatter.title}
+							imagen={p1[0].frontmatter.imagen}
+							url={p1[0].frontmatter.url}
+						/>
+					</div>
+					<div class="column is-one-quarter">
+						<ProjectCard
+							title={p2[0].frontmatter.title}
+							imagen={p2[0].frontmatter.imagen}
+							url={p2[0].frontmatter.url}
+						/>
+					</div>
+					<div class="column is-one-quarter">
+						<ProjectCard
+							title={p3[0].frontmatter.title}
+							imagen={p3[0].frontmatter.imagen}
+							url={p3[0].frontmatter.url}
+						/>
+					</div>
+					<div class="column is-one-quarter">
+						<ProjectCard
+							title={p4[0].frontmatter.title}
+							imagen={p4[0].frontmatter.imagen}
+							url={p4[0].frontmatter.url}
+						/>
+					</div>
+				</div>
+				<div class="is-flex is-aling-items-center">
+					<a
+						href="/proyectos"
+						class="button blue-background blue-background-hoover"
+						style="margin:auto"
+						>Ver todos
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<style>
+			a {
+				width: fit-content;
+			}
+			img {
+				max-height: 400px;
+			}
+		</style>
 	</main>
 </Layout>
-
-<style>
-
-</style>

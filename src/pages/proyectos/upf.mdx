@@ -1,0 +1,28 @@
+---
+imagen: src/images/proyectos/upf/logo.png
+title: Upf
+url: /proyectos/upf
+layout: ../../layouts/ProjectLayout.astro
+---
+import BasicSection from '../../components/BasicSection.astro';
+import MirrorSection from '../../components/MirrorSection.astro';
+import VideoSection from '../../components/VideoSection.astro';
+import Cover from '../../components/Cover.astro'
+import p0 from '../../images/proyectos/upf/p0.png';
+import p1 from '../../images/proyectos/upf/p1.png';
+import cover from '../../images/proyectos/upf/cover.jpg';
+
+<Cover img={cover} title="Universidad Paulo Freire"/>
+
+<BasicSection img={p0} 
+img_description='Taller de difusión de beneficios de la Gestión de la Energía en sector industrial'>
+Director académico del Diplomado en Gestión de la Energía en la Industria basado en la Norma ISO 50001, y profesor de Proyectos Energéticos y Data Analytics.
+</BasicSection>
+<MirrorSection img={p1} 
+img_description='Entrevista en Nicaragua'>
+<iframe _ngcontent-ump-c45="" width="100%" height="315" src="https://www.youtube.com/embed/pG6WXSsKI4Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</MirrorSection>
+
+
+
+

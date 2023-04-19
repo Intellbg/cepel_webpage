@@ -1,0 +1,51 @@
+---
+imagen: src/images/proyectos/fv/logo.png
+title: Fv Andina Planta Grifería
+url: /proyectos/fv
+layout: ../../layouts/ProjectLayout.astro
+---
+import BasicSection from '../../components/BasicSection.astro';
+import MirrorSection from '../../components/MirrorSection.astro';
+import VideoSection from '../../components/VideoSection.astro';
+import Cover from '../../components/Cover.astro'
+import p0 from '../../images/proyectos/fv/p0.png';
+import p1 from '../../images/proyectos/fv/p1.png';
+import p2 from '../../images/proyectos/fv/p2.png';
+import cover from '../../images/proyectos/fv/cover.jpg';
+import doc from '../../docs/fv.pdf';
+
+<Cover img={cover} title="Fv Andina Planta Grifería"/>
+
+<BasicSection img={p0} 
+title='Programa de Eficiencia Energética' 
+img_description='Ing. Miguel Angel Patalano, Gerente de Planta Grifería de FV ANDINA en taller de concientización de la Eficiencia Energética al personal administrativo de planta'>
+Programa de eficiencia energética basado en la Norma ISO 50001, loa resultados que se muestran son un ahorro del 22.8% en la factura de energía eléctrica y 38.0% en la carga base energética.
+
+
+El Programa incluyo el desarrollo de un sistema de visualización del unifilar eléctrico interno, formación del personal de planta (Producción-Mantenimiento-Sistema Integrado), ejecución de auditorías energética, implementación de las oportunidades de mejora del desempeño energético, plan de control operacional de variables relevantes y verificación de los resultados.
+
+</BasicSection>
+
+<MirrorSection img={p1}
+img_description='Equipo Energético de FV ANDINA Planta Grifería.'>
+>
+Oportunidades de mejora implementadas que aseguraron el éxito proyecto:
+
+- Optimización del Sistema de Aire Comprimido
+- Optimización del Sistema de Iluminación
+- Cambio en la programación de trabajo en el USEn
+
+<a href={doc}>Ver Certificado</a>
+</MirrorSection>
+
+<BasicSection img={p2} 
+title='App de monitoreo Power BI'
+img_description='Vista principal de la App'>
+>
+El monitoreo de todos los medidores de la planta, incluido el medidor principal de la distribuidora están siendo monitoreados en línea en Power BI, con lo cual los Jefes de Planta está monitoreando en línea sus procesos de producción mediante los medidores de energía.'
+</BasicSection>
+
+<VideoSection>
+    <iframe _ngcontent-pfs-c45="" width="100%" height="315" src="https://www.youtube.com/embed/S16L6nwI0iQ?start=2685" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</VideoSection>
+
