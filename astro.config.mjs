@@ -5,6 +5,6 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   integrations: [mdx()],
-  site: 'https://cepelee.com/',
+  site: 'https://cepelee.com',
   base: '/cepel_webpage',
 });
