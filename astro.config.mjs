@@ -6,5 +6,4 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   integrations: [mdx()],
   site: 'https://cepelee.com',
-  base: '/cepel_webpage',
 });
