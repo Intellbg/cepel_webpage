@@ -1,0 +1,81 @@
+---
+const news = await Astro.glob("../content/noticias/*.mdx");
+news.sort((a, b) => b.frontmatter.weight - a.frontmatter.weight);
+---
+
+<div class="section">
+  <div class="container is-flex is-justify-content-center">
+    {
+      news.map((item, index) => (
+        <div
+          class="container-news is-hidden is-flex-direction-column"
+          id={"slide-" + index.toString()}
+        >
+          <item.Content />
+        </div>
+      ))
+    }
+  </div>
+  <div class="carousel-pagination">
+    {news.map((item, index) => <button data-button>&bull;</button>)}
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    var currentSlide = -1;
+    const buttons = document.querySelectorAll("[data-button]");
+
+    function activateSlide(id) {
+      if (id === currentSlide) {
+        return;
+      }
+      let slide = document.getElementById(`slide-${id}`);
+      slide.classList.remove("is-hidden");
+      slide.classList.add("is-flex");
+      buttons[id].classList.add("is-active");
+
+      slide = document.getElementById(`slide-${currentSlide}`);
+      if (slide) {
+        slide.classList.add("is-hidden");
+        slide.classList.remove("is-flex");
+        buttons[currentSlide].classList.remove("is-active");
+      }
+      currentSlide = id;
+    }
+
+    buttons.forEach((button, index) => {
+      button.addEventListener("click", () => activateSlide(index));
+    });
+
+    automaticChange()
+    function automaticChange() {
+      activateSlide(currentSlide+1)
+      setTimeout(automaticChange, 5000);
+    }
+  });
+</script>
+
+<style>
+  .container-news {
+    height: 450px;
+  }
+
+  .carousel-pagination {
+    display: flex;
+    justify-content: center;
+  }
+  .carousel-pagination button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 0 0.25rem;
+    padding: 0.25rem;
+    font-size: 3rem;
+    outline: none;
+  }
+  .carousel-pagination button:hover,
+  .carousel-pagination button.is-active {
+    color: #d5eca0;
+  }
+</style>

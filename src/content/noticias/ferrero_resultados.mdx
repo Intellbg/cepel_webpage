@@ -1,0 +1,17 @@
+---
+weight: 4
+---
+
+import img1 from "../../images/noticias/resultados_ferrero1.jpg";
+import img2 from "../../images/noticias/resultados_ferrero2.jpg";
+import doc from "../../docs/iso_ferrero.pdf";
+import NewsItem from "../../components/NewsItem.astro";
+
+<NewsItem
+  title="Presentación de resultados del Programa de Eficiencia Energética e ISO 50001 (Ferrero del Ecuador)"
+  img1={img1}
+  img2={img2}
+>
+  <a class="button blue-background  blue-background-hoover" href={doc}>Ver resultados</a>
+  <a class="button blue-background  blue-background-hoover" href="/proyectos/ferrero">Conoce más de nuestro trabajo en Ferrero</a>
+</NewsItem>

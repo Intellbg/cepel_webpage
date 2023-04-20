@@ -1,0 +1,20 @@
+---
+export interface Props {
+  media: string;
+  title: string;
+}
+const { media, title } = Astro.props;
+---
+
+<h2 class="title-text blue">{title}</h2>
+<figure class="image is-16by9">
+  <iframe
+    class="has-ratio"
+    src={media}
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen=""
+    width="640" height="360"
+    ></iframe>
+</figure>
+
+<style></style>

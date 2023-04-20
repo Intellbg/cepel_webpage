@@ -1,0 +1,33 @@
+---
+export interface Props {
+  title: string;
+  img1: string;
+  img2: string;
+}
+const { title, img1, img2 } = Astro.props;
+---
+
+<h2 class="title-text blue">{title}</h2>
+<div class="columns is-flex">
+  <div class="column">
+    <img src={img1} alt="" />
+  </div>
+  <div class="column">
+    <img src={img2} alt="" />
+  </div>
+</div>
+<div class="has-text-centered">
+  <slot />
+</div>
+
+<style>
+  img {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    margin: auto;
+  }
+  .columns{
+    height: 80%;
+  }
+</style>
