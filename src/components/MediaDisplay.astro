@@ -8,6 +8,7 @@ const { media, title } = Astro.props;
 
 <h2 class="title-text blue">{title}</h2>
 <figure class="image is-16by9">
+  <slot></slot>
   <iframe
     class="has-ratio"
     src={media}
