@@ -7,15 +7,21 @@ const { media, title } = Astro.props;
 ---
 
 <h2 class="title-text blue">{title}</h2>
-<figure class="image is-16by9">
-  <slot></slot>
+<slot />
+<div class="frame_container">
   <iframe
     class="has-ratio"
     src={media}
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen=""
-    width="640" height="360"
-    ></iframe>
-</figure>
+    height="100%"
+    width="100%"></iframe>
+</div>
 
-<style></style>
+<style>
+  .frame_container {
+    height: 100%;
+    width: 80%;
+    margin: auto;
+  }
+</style>

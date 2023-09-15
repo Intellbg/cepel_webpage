@@ -8,26 +8,27 @@ const { title, img1, img2 } = Astro.props;
 ---
 
 <h2 class="title-text blue">{title}</h2>
-<div class="columns is-flex">
-  <div class="column">
+<div class="images">
     <img src={img1} alt="" />
-  </div>
-  <div class="column">
     <img src={img2} alt="" />
-  </div>
 </div>
 <div class="has-text-centered">
   <slot />
 </div>
 
 <style>
-  img {
-    display: block;
-    max-height: 100%;
-    max-width: 100%;
-    margin: auto;
+  .images{
+    justify-content: center;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 10px;
+    height: 375px;
   }
-  .columns{
-    height: 80%;
+  .images > img {
+    display: flex;
+    object-fit: cover;
+    height: auto;
+    height: 100%;
   }
 </style>

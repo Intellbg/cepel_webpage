@@ -4,11 +4,11 @@ news.sort((a, b) => b.frontmatter.weight - a.frontmatter.weight);
 ---
 
 <div class="section">
-  <div class="container is-flex is-justify-content-center">
+  <div class="container container-news">
     {
       news.map((item, index) => (
         <div
-          class="container-news is-hidden is-flex-direction-column"
+          class="is-hidden news_item"
           id={"slide-" + index.toString()}
         >
           <item.Content />
@@ -22,45 +22,50 @@ news.sort((a, b) => b.frontmatter.weight - a.frontmatter.weight);
 </div>
 
 <script is:inline>
-  document.addEventListener("DOMContentLoaded", function () {
-    var currentSlide = -1;
-    const buttons = document.querySelectorAll("[data-button]");
+document.addEventListener("DOMContentLoaded", function () {
+  var currentSlide = -1;
+  const buttons = document.querySelectorAll("[data-button]");
 
-    function activateSlide(id) {
-      if (id === currentSlide) {
-        return;
-      }
-      let slide = document.getElementById(`slide-${id}`);
-      slide.classList.remove("is-hidden");
-      slide.classList.add("is-flex");
-      buttons[id].classList.add("is-active");
-
-      slide = document.getElementById(`slide-${currentSlide}`);
-      if (slide) {
-        slide.classList.add("is-hidden");
-        slide.classList.remove("is-flex");
-        buttons[currentSlide].classList.remove("is-active");
-      }
-      currentSlide = id;
+  function activateSlide(id) {
+    if (id === currentSlide) {
+      return;
     }
+    let slide = document.getElementById(`slide-${id}`);
+    slide.classList.remove("is-hidden");
+    slide.classList.add("is-bloc");
+    buttons[id].classList.add("is-active");
 
-    buttons.forEach((button, index) => {
-      button.addEventListener("click", () => activateSlide(index));
-    });
-
-    automaticChange()
-    function automaticChange() {
-      activateSlide(currentSlide+1)
-      setTimeout(automaticChange, 15000);
+    slide = document.getElementById(`slide-${currentSlide}`);
+    if (slide) {
+      slide.classList.add("is-hidden");
+      slide.classList.remove("is-bloc");
+      buttons[currentSlide].classList.remove("is-active");
     }
+    currentSlide = id;
+  }
+
+  buttons.forEach((button, index) => {
+    button.addEventListener("click", () => activateSlide(index));
   });
+
+  automaticChange();
+  function automaticChange() {
+    activateSlide(currentSlide + 1);
+    setTimeout(automaticChange, 15000);
+  }
+});
 </script>
 
 <style>
   .container-news {
+    overflow: hidden;
     height: 450px;
+    text-align: center;
+    position: relative;
   }
-
+  .news_item {
+    height: 100%;
+  }
   .carousel-pagination {
     display: flex;
     justify-content: center;
