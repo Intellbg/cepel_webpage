@@ -1,13 +1,15 @@
 ---
 export interface Props {
   title: string;
+  subtitle: string;
   img1: string;
   img2: string;
 }
-const { title, img1, img2 } = Astro.props;
+const { title, subtitle, img1, img2 } = Astro.props;
 ---
 
 <h2 class="title-text blue">{title}</h2>
+<h3 class="title-text blue">{subtitle}</h3>
 <div class="images">
     <img src={img1} alt="" />
     <img src={img2} alt="" />
