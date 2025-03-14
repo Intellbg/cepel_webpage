@@ -1,6 +1,6 @@
 ---
 const news = await Astro.glob("../content/noticias/*.mdx");
-news.sort((a, b) => b.frontmatter.weight - a.frontmatter.weight);
+news.sort((a, b) => a.frontmatter.weight - b.frontmatter.weight);
 ---
 
 <div class="section">
