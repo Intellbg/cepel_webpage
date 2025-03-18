@@ -1,6 +1,6 @@
 ---
 const news = await Astro.glob("../content/noticias/*.mdx");
-news.sort((a, b) => b.frontmatter.weight - a.frontmatter.weight);
+news.sort((a, b) => a.frontmatter.weight - b.frontmatter.weight);
 ---
 
 <div class="section">
@@ -59,11 +59,11 @@ document.addEventListener("DOMContentLoaded", function () {
 <style>
   .container-news {
     overflow: hidden;
-    height: 450px;
+    height: 500px;
     text-align: center;
     position: relative;
   }
-  .news_item {
+  .news_item {    
     height: 100%;
   }
   .carousel-pagination {

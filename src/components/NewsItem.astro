@@ -1,13 +1,15 @@
 ---
 export interface Props {
   title: string;
+  subtitle: string;
   img1: string;
-  img2: string;
+  img2?: string;
 }
-const { title, img1, img2 } = Astro.props;
+const { title, subtitle, img1, img2 } = Astro.props;
 ---
 
 <h2 class="title-text blue">{title}</h2>
+<p class="has-text-centered">{subtitle}</p>
 <div class="images">
     <img src={img1} alt="" />
     <img src={img2} alt="" />
@@ -21,14 +23,13 @@ const { title, img1, img2 } = Astro.props;
     justify-content: center;
     display: flex;
     position: relative;
-    flex-wrap: wrap;
+    flex-wrap: wrap;  
     gap: 10px;
     height: 375px;
   }
   .images > img {
     display: flex;
     object-fit: cover;
-    height: auto;
     height: 100%;
   }
 </style>
