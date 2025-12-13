@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.2.0",
-    "astro": "^5.5.2",
+    "astro": "^5.16.5",
     "bulma": "^0.9.4",
     "webpage": "file:"
   }
