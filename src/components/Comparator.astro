@@ -1,8 +1,9 @@
 ---
-import ImagenHoverText from "./ImagenHoverText.astro";
+import { imageSrc } from "../utils/image";
+
 export interface Props {
-    img: string;
-    img2: string;
+    img: string | { src: string };
+    img2: string | { src: string };
     title: string;
 }
 const { img, img2, title } = Astro.props;
@@ -18,7 +19,7 @@ const { img, img2, title } = Astro.props;
                 <h3 class="has-text-centered">
                     <strong> Situación inicial</strong>
                 </h3>
-                <img src={img} alt="" />
+                <img src={imageSrc(img)} alt="" />
             </div>
             <div
                 class="column is-flex is-flex-direction-column is-aling-items-center is-justify-content-center padded"
@@ -26,7 +27,7 @@ const { img, img2, title } = Astro.props;
                 <h3 class="has-text-centered">
                     <strong>Situación actual</strong>
                 </h3>
-                <img src={img2} alt="" />
+                <img src={imageSrc(img2)} alt="" />
             </div>
         </div>
     </div>

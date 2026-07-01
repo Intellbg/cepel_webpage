@@ -1,12 +1,14 @@
 ---
+import { imageSrc } from "../utils/image";
+
 export interface Props {
-    img: string;
+    img: string | { src: string };
 }
 const { img } = Astro.props;
 ---
 
 <div class="image">
-    <img class="image__img" src={img}  />
+    <img class="image__img" src={imageSrc(img)}  />
     <div class="image__overlay image__overlay--primary">
         <slot />
     </div>

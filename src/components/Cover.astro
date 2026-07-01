@@ -1,6 +1,8 @@
 ---
+import { imageSrc } from "../utils/image";
+
 export interface Props {
-    img: string;
+    img: string | { src: string };
     title: string;
 }
 const { img, title } = Astro.props;
@@ -11,7 +13,7 @@ const { img, title } = Astro.props;
         <h1 class="blue-background title-text">{title}</h1>
         <img
             class="header-background"
-            src={img}
+            src={imageSrc(img)}
             id="header-background-id"
             alt="background-img"
         />

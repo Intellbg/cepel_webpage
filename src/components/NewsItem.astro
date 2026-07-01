@@ -1,9 +1,11 @@
 ---
+import { imageSrc } from "../utils/image";
+
 export interface Props {
   title: string;
   subtitle: string;
-  img1: string;
-  img2?: string;
+  img1: string | { src: string };
+  img2?: string | { src: string };
 }
 const { title, subtitle, img1, img2 } = Astro.props;
 ---
@@ -11,8 +13,8 @@ const { title, subtitle, img1, img2 } = Astro.props;
 <h2 class="title-text blue">{title}</h2>
 <p class="has-text-centered">{subtitle}</p>
 <div class="images">
-    <img src={img1} alt="" />
-    <img src={img2} alt="" />
+    <img src={imageSrc(img1)} alt="" />
+    {img2 && <img src={imageSrc(img2)} alt="" />}
 </div>
 <div class="has-text-centered">
   <slot />

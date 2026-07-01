@@ -1,6 +1,8 @@
 ---
+import { imageSrc } from "../utils/image";
+
 export interface Props {
-  media: string;
+  media: string | { src: string };
   title: string;
 }
 const { media, title } = Astro.props;
@@ -11,7 +13,7 @@ const { media, title } = Astro.props;
 <div class="frame_container">
   <iframe
     class="has-ratio"
-    src={media}
+    src={imageSrc(media)}
     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen=""
     height="100%"

@@ -1,6 +1,8 @@
 ---
+import { imageSrc } from "../utils/image";
+
 export interface Props {
-    imagen: string;
+    imagen: string | { src: string };
     title: string;
     url: string;
 }
@@ -11,7 +13,7 @@ const window="window.location='"+url+"'"
 <div class="flip-card" style="cursor: pointer;" onclick={window}>
     <div class="flip-card-inner">
         <div class="flip-card-front">
-            <img src={imagen} style="width:280px;height:280px;" />
+            <img src={imageSrc(imagen)} style="width:280px;height:280px;" />
         </div>
         <div class="flip-card-back">
             <div>

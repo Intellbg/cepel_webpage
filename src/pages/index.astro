@@ -10,10 +10,11 @@ import MirrorSection from "../components/MirrorSection.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import NewsSection from "../components/NewsSection.astro";
 
-const p3 = await Astro.glob("./proyectos/ferrero.mdx");
-const p4 = await Astro.glob("./proyectos/fv.mdx");
-const p1 = await Astro.glob("./proyectos/pronaca.mdx");
-const p2 = await Astro.glob("./proyectos/bioalimentar.mdx");
+const featuredProjects = import.meta.glob("./proyectos/*.mdx", { eager: true });
+const p1 = featuredProjects["./proyectos/pronaca.mdx"];
+const p2 = featuredProjects["./proyectos/bioalimentar.mdx"];
+const p3 = featuredProjects["./proyectos/ferrero.mdx"];
+const p4 = featuredProjects["./proyectos/fv.mdx"];
 ---
 
 <Layout title="Cepel">
@@ -117,30 +118,30 @@ const p2 = await Astro.glob("./proyectos/bioalimentar.mdx");
 				<div class="columns is-flex-wrap-wrap">
 					<div class="column is-one-quarter">
 						<ProjectCard
-							title={p1[0].frontmatter.title}
-							imagen={p1[0].frontmatter.imagen}
-							url={p1[0].frontmatter.url}
+							title={p1.frontmatter.title}
+							imagen={p1.frontmatter.imagen}
+							url={p1.frontmatter.url}
 						/>
 					</div>
 					<div class="column is-one-quarter">
 						<ProjectCard
-							title={p2[0].frontmatter.title}
-							imagen={p2[0].frontmatter.imagen}
-							url={p2[0].frontmatter.url}
+							title={p2.frontmatter.title}
+							imagen={p2.frontmatter.imagen}
+							url={p2.frontmatter.url}
 						/>
 					</div>
 					<div class="column is-one-quarter">
 						<ProjectCard
-							title={p3[0].frontmatter.title}
-							imagen={p3[0].frontmatter.imagen}
-							url={p3[0].frontmatter.url}
+							title={p3.frontmatter.title}
+							imagen={p3.frontmatter.imagen}
+							url={p3.frontmatter.url}
 						/>
 					</div>
 					<div class="column is-one-quarter">
 						<ProjectCard
-							title={p4[0].frontmatter.title}
-							imagen={p4[0].frontmatter.imagen}
-							url={p4[0].frontmatter.url}
+							title={p4.frontmatter.title}
+							imagen={p4.frontmatter.imagen}
+							url={p4.frontmatter.url}
 						/>
 					</div>
 				</div>
